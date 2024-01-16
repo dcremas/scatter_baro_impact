@@ -7,7 +7,7 @@ import numpy as np
 
 from bokeh.io import curdoc
 from bokeh.layouts import column, row
-from bokeh.models import ColumnDataSource, Div, Select, Slider, TextInput, Range1d, Paragraph, HoverTool
+from bokeh.models import ColumnDataSource, Div, Select, Slider, TextInput, Range1d, Paragraph
 from bokeh.plotting import figure
 
 from models import stations, data, headers, time_update
@@ -39,7 +39,7 @@ y_axis_range = {
 }
 
 desc = Div(text=(Path(__file__).parent / "description.html").read_text("utf8"), sizing_mode="stretch_width",
-           margin=(2, 2, 2, 15))
+           margin=(2, 2, 5, 15))
 
 years = Slider(title="Year", value=2019, start=2019, end=2024, step=1, margin=(2, 2, 2, 15))
 station_name = Select(title="Weather Station Name", value=stations[0], options=stations, margin=(2, 2, 2, 15))
@@ -87,12 +87,18 @@ p1 = Paragraph(text=update_text_1, width=800, height=10, margin=(25, 25, 5, 15))
 p2 = Paragraph(text=update_text_2, width=800, height=10, margin=(5, 25, 5, 15))
 p3 = Paragraph(text=update_text_3, width=800, height=10, margin=(5, 25, 25, 15))
 
+hyperlink_github = Div(
+    text="""<p><i>To see the full codebase for this interactive web-based visualization: </i><a href="https://github.com/dcremas/scatter_baro_impact">Link to my github account</a></p>""",
+    width=800, height=25, margin=(10, 10, 10, 15)
+    )
+
 hyperlink_div = Div(
     text="""<a href="https://dataviz.dustincremascoli.com">Go back to Data Visualizations Main Page</a>""",
     width=400, height=100, margin=(10, 10, 10, 15)
     )
 
 layout = column(desc,
+                hyperlink_github, 
                 years,
                 station_name,
                 y_axis,
@@ -106,4 +112,4 @@ layout = column(desc,
 update()
 
 curdoc().add_root(layout)
-curdoc().title = "Barometric Pressure Change Data"
+curdoc().title = "Barometric Pressure Change Volatility"
