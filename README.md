@@ -2,7 +2,7 @@
 
 #### Description:
 
-#### A visualization intended to inform those who are impacted by barometric pressure volatility, what the history is for the past four years for each hour.  Every dot on the scatter plot represents a weather observation within that time period. 
+#### A visualization intended to inform those who are impacted by barometric pressure volatility, what the history is for the past three years for each hour.  Every dot on the scatter plot represents a weather observation within that time period. 
 
 ##### Features:
 
