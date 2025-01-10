@@ -38,7 +38,7 @@ obs.slp_3hr_diff,
 obs.slp_6hr_diff,
 obs.slp_24hr_diff
 FROM obs_baro_impact obs
-WHERE obs.rdg_year >= 2021
+WHERE obs.rdg_year >= 2022
 ORDER BY obs.station, obs.date;
 '''
 
