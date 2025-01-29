@@ -41,7 +41,7 @@ y_axis_range = {
 desc = Div(text=(Path(__file__).parent / "description.html").read_text("utf8"), sizing_mode="stretch_width",
            margin=(2, 2, 5, 15))
 
-years = Slider(title="Year", value=2022, start=2022, end=2024, step=1, margin=(2, 2, 2, 15))
+years = Slider(title="Year", value=2023, start=2023, end=2025, step=1, margin=(2, 2, 2, 15))
 station_name = Select(title="Weather Station Name", value=stations[0], options=stations, margin=(2, 2, 2, 15))
 y_axis = Select(title="Main Chart Y Axis", options=['3 Hour Change','6 Hour Change', '24 Hour Change'],
                 value="3 Hour Change", margin=(2, 2, 2, 15))
